@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:clickable="true">
+<RelativeLayout
+    android:id="@+id/topwise_guid_page"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1">
+    <ImageView
+        android:id="@+id/topwise_guid_background_icon"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        />
+    <TextView
+        android:id="@+id/guide_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:textColor="#ffffff"
+        android:text="@string/topwise_guide_tuijian"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="25sp"/>
+    <Button
+        android:id="@+id/guide_jump"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:text="@string/topwise_guide_jump"
+        android:background="@drawable/guide_btn_skip"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        android:layout_alignParentRight="true"/>
+</RelativeLayout>
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2" />
+
+        <LinearLayout
+            android:id="@+id/ll_dot"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:orientation="horizontal" />
+        <Button
+            android:id="@+id/guide_btn"
+            android:layout_width="220dp"
+            android:layout_height="0dp"
+            android:layout_weight="0.4"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/guide_btn_selector"
+            android:text="@string/topwise_guide_step"/>
+        <TextView
+            android:id="@+id/guide_description"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.3"
+            android:gravity="center_horizontal"
+            />
+    </LinearLayout>
+</LinearLayout>

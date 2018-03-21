@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FrameLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" 
+    android:layout_height="match_parent">
+
+    <include layout="@layout/as_waiting_layout"
+        android:layout_width="match_parent" 
+        android:layout_height="match_parent"
+        />
+
+
+
+    <View
+        android:id="@+id/zkas_item_top_shade"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#EEEEEE" />
+
+    <!--<ImageView-->
+        <!--android:id="@+id/zkas_item_top_shade"-->
+        <!--android:visibility="gone"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@drawable/zkas_top_shade"-->
+        <!--/>-->
+</FrameLayout>

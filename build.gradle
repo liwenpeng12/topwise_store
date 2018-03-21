@@ -1,0 +1,142 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.3'
+    }
+}
+apply plugin: 'com.android.application'
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
+
+dependencies {
+    compile fileTree(include: '*.jar', dir: 'libs')
+    //    provided fileTree(dir: 'libs', include: '*.jar')
+    compile 'com.android.support:support-v13:25.0.1'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'org.greenrobot:eventbus:3.0.0'
+}
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '25.0.0'
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            aidl.srcDirs = ['src']
+            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+        }
+
+        // Move the tests to tests/java, tests/res, etc...
+        instrumentTest.setRoot('tests')
+
+        // Move the build types to build-types/<type>
+        // For instance, build-types/debug/java, build-types/debug/AndroidManifest.xml, ...
+        // This moves them out of them default location under src/<type>/... which would
+        // conflict with src/ being used by the main source set.
+        // Adding new build types or product flavors should be accompanied
+        // by a similar customization.
+        debug.setRoot('build-types/debug')
+        release.setRoot('build-types/release')
+    }
+
+    signingConfigs {
+//        debug {
+//            storeFile file("D:\\projects\\zooking.keystore")
+//            storePassword "ibimuyu1q2w3e4r5t"
+//            keyAlias "zooking"
+//            keyPassword "ibimuyu1q2w3e4r5t"
+//        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    productFlavors {
+
+        alphago {
+            manifestPlaceholders = [app_icon              : "@drawable/as_ic_launcher",
+                                    app_name              : "@string/app_name",
+                                    IBIMUYUCHANNEL        : "appstore_alphago",
+                                    IBIMUYUAPPSTORECHANNEL: "alphago",
+                                    PKEY                  : "1000",
+                                    PSECRET               : "zhangku",
+                                    ADS_PLACEMENTID       : "1735948206647098_1791363837772201",
+                                    ZK_WELCOME_ADID       : "22491",
+                                    ZK_APPID              : "2085"]
+        }
+
+        ivvi {
+            applicationId "com.ivvi.android.appstore"
+            manifestPlaceholders = [app_icon              : "@drawable/as_ic_launcher_ivvi",
+                                    app_name              : "@string/app_name",
+                                    IBIMUYUCHANNEL        : "appstore_ivvi",
+                                    IBIMUYUAPPSTORECHANNEL: "ivvi",
+                                    PKEY                  : "1005",
+                                    PSECRET               : "ivviappstore",
+                                    ADS_PLACEMENTID       : "1735948206647098_1791363837772201",
+                                    ZK_WELCOME_ADID       : "22402",
+                                    ZK_APPID              : "2068"]
+        }
+
+        ivvi_test {
+            applicationId "com.ivvi.android.appstore"
+            manifestPlaceholders = [app_icon              : "@drawable/as_ic_launcher_ivvi",
+                                    app_name              : "@string/app_name",
+                                    IBIMUYUCHANNEL        : "appstore_ivvi",
+                                    IBIMUYUAPPSTORECHANNEL: "ivvi",
+                                    PKEY                  : "1005",
+                                    PSECRET               : "ivviappstore",
+                                    ADS_PLACEMENTID       : "1735948206647098_1791363837772201",
+                                    ZK_WELCOME_ADID       : "22403",
+                                    ZK_APPID              : "2068"]
+        }
+
+        sharp {
+            versionName "2.0.38"
+            manifestPlaceholders = [app_icon              : "@drawable/as_ic_launcher_sharp",
+                                    app_name              : "@string/app_name",
+                                    IBIMUYUCHANNEL        : "appstore_sharp",
+                                    IBIMUYUAPPSTORECHANNEL: "sharp",
+                                    PKEY                  : "1011",
+                                    PSECRET               : "sharpappstore",
+                                    ADS_PLACEMENTID       : "1735948206647098_1791363837772201",
+                                    ZK_WELCOME_ADID       : "22402",
+                                    ZK_APPID              : "2068"]
+        }
+
+        dingzhi {
+            applicationId "com.topwise.topos.appstore"
+            versionName "2.0.38"
+            manifestPlaceholders = [app_icon              : "@drawable/as_ic_launcher_sharp",
+                                    app_name              : "@string/app_name",
+                                    IBIMUYUCHANNEL        : "appstore_dingzhi",
+                                    IBIMUYUAPPSTORECHANNEL: "dingzhi",
+                                    PKEY                  : "1017",
+                                    PSECRET               : "dingzhiappstore",
+                                    ADS_PLACEMENTID       : "1735948206647098_1791363837772201",
+                                    ZK_WELCOME_ADID       : "22402",
+                                    ZK_APPID              : "2068"]
+        }
+
+    }
+}

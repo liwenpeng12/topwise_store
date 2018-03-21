@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/as_window_bg_color"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/zkas_list_item_universal_layout" />
+
+        <ImageView
+            android:id="@+id/expandbutton"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="40dp"
+            android:scaleType="center"
+            android:src="@drawable/zkas_expand_bg" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/downloadrow_ex"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/deletedownload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="center"
+                android:src="@drawable/zkas_deletetask_selector" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="删除任务"
+                android:textColor="#89000000"
+                android:textSize="12dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/zkas_id_main_item_btm_divider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/zkas_list_divider" />
+</LinearLayout>

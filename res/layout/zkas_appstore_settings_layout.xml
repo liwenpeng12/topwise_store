@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/as_window_bg_color"
+    android:orientation="vertical">
+    <!--<TextView-->
+    <!--android:id="@+id/status"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="@dimen/zkas_statusbar_height"-->
+    <!--android:background="#e0000000"-->
+    <!--/>-->
+    <include layout="@layout/as_actionbar_layout" />
+    <include layout="@layout/line2"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/settings_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"></LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/zkas_list_item_interval" />
+
+
+    <include
+        android:id="@+id/clear_cache"
+        layout="@layout/zkas_settings_item_layout" />
+
+    <!--<include-->
+        <!--android:id="@+id/self_upgrade"-->
+        <!--layout="@layout/zkas_settings_item_layout" />-->
+
+    <!--<include layout="@layout/zkas_list_item_interval" />-->
+</LinearLayout>

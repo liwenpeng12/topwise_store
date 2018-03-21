@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="220dip"
+        android:orientation="vertical"
+        android:background="#3d8afd" >
+    <ImageView
+            android:layout_width="80dip"
+            android:layout_height="80dip"
+            android:layout_marginTop="23dip"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/zkas_download_autoins" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dip"
+            android:text="@string/as_startins"
+            android:textColor="#ddffffff"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dip"
+            android:text="@string/as_explain"
+            android:textColor="#89ffffff"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/button_settingautoins"
+            android:layout_width="90dip"
+            android:layout_height="26dip"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dip"
+            android:background="@drawable/zkas_download_autoinstill"
+            android:text="@string/as_gonow"
+            android:textColor="#ddffffff"
+            android:textSize="12sp" 
+            android:layout_marginBottom="25dip"/>
+
+</LinearLayout>

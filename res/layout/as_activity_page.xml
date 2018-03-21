@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/zkas_id_search_area"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/zkas_search_view_height"
+        android:layout_margin="@dimen/zkas_search_view_horz_padding"
+        android:background="@drawable/zkas_search_container_bg"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/zkas_search_view_horz_padding">
+
+        <TextView
+            android:id="@+id/zkas_id_search_edit"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="left|center_vertical"
+            android:hint="@string/as_search_hint_text"
+            android:textColor="@color/zkas_font_color_assistant"
+            android:textSize="@dimen/zkas_search_view_text_size" />
+
+        <ImageView
+            android:id="@+id/zkas_id_search_btn"
+            android:layout_width="@dimen/zkas_search_view_height"
+            android:layout_height="@dimen/zkas_search_view_height"
+            android:src="@drawable/zkas_search_btn_bg" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/main_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></RelativeLayout>
+</LinearLayout>

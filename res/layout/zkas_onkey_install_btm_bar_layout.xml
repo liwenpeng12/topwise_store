@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="52dip"
+    android:orientation="horizontal" 
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:background="@drawable/zkas_downloadbottom_shadow"
+    android:gravity="center_vertical"
+    >
+    
+    <TextView 
+        android:id="@+id/zkas_id_all_app_size_info"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="@dimen/zkas_list_item_app_used_info_text_size"
+        android:textColor="@color/zkas_list_item_app_name_text_color"
+        />
+
+    <Button 
+        android:id="@+id/zkas_id_install_all_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/zkas_btm_bar_button_height"
+        android:layout_marginLeft="@dimen/zkas_list_item_sl_btn_text_margin"
+        android:background="@drawable/as_btn_normal"
+        android:text="@string/as_install_all"
+        android:textSize="@dimen/zkas_list_item_app_btn_text_size"
+        android:textColor="@color/as_normal_text_color"
+        android:gravity="center"
+        />
+    
+</LinearLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA">
+
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/zkas_statusbar_height"
+        android:background="#e0000000" />
+
+
+    <include
+        layout="@layout/as_actionbar_layout" />
+
+    <View android:layout_below="@id/as_action_bar_layout"
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="#dcdcdc" />
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/line" />
+
+
+</RelativeLayout>

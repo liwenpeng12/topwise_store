@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/notask_hasnetlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/m"
+        android:layout_width="match_parent"
+        android:layout_height="148dip"
+        android:background="#f0f1f4" >
+        <ImageView
+            android:id="@+id/notask_small"
+            android:layout_width="80dip"
+            android:layout_height="80dip"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:scaleType="center"
+            android:src="@drawable/zkas_download_task_prompt" />
+        <TextView
+              android:id="@+id/notask_small_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/notask_small"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/no_download_prompt"
+            android:textColor="#89000000"
+            android:textSize="12dip" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/recommend_prompt"
+        android:layout_width="match_parent"
+        android:layout_height="48dip"
+        android:layout_below="@id/m"
+        android:gravity="center" >
+        <TextView
+            android:id="@+id/recommend_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="16dip"
+            android:gravity="center"
+            android:text="热门推荐"
+            android:textColor="#89000000"
+            android:textSize="12dip" />
+        <TextView
+            android:id="@+id/change"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dip"
+            android:gravity="center"
+            android:text="换一批"
+            android:textColor="@color/as_normal_text_color"
+            android:textSize="12dip" />
+    </RelativeLayout>
+
+</RelativeLayout>

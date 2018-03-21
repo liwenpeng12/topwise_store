@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.topwise.topos.appstore.view.ListPopularItemView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="30dp"
+    android:paddingTop="@dimen/zkas_rank_item_vert_padding"
+    android:paddingRight="30dp"
+    android:paddingBottom="@dimen/zkas_rank_item_vert_padding"
+    >
+    
+    <include 
+        android:id="@+id/zkas_id_list_popular_fst_sub_item"
+        layout="@layout/zkas_popular_item_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|center_vertical"
+        />
+    
+    <include 
+        android:id="@+id/zkas_id_list_popular_snd_sub_item"
+        layout="@layout/zkas_popular_item_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        />
+    
+    <include 
+        android:id="@+id/zkas_id_list_popular_trd_sub_item"
+        layout="@layout/zkas_popular_item_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center_vertical"
+        />
+
+</com.topwise.topos.appstore.view.ListPopularItemView>

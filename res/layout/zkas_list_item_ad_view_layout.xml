@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.topwise.topos.appstore.view.ListTopAdItemView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" 
+    >
+    
+    <ImageView 
+        android:id="@+id/zkas_id_ad_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/zkas_banner_larger_image_height"
+        android:scaleType="centerCrop"
+        />
+    
+    <TextView 
+        android:id="@+id/zkas_id_ad_descrip_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/zkas_list_item_ml_text_link_hight"
+        android:gravity="left|center_vertical"
+        android:drawablePadding="@dimen/zkas_list_item_more_text_icon_margin"
+        android:textSize="@dimen/zkas_list_item_more_text_size"
+        android:textColor="@color/zkas_font_color_assistant"
+        android:paddingLeft="@dimen/zkas_list_item_horizontal_padding"
+        android:paddingRight="@dimen/zkas_list_item_horizontal_padding"
+        android:singleLine="true"
+        android:ellipsize="end"
+        />
+
+</com.topwise.topos.appstore.view.ListTopAdItemView>

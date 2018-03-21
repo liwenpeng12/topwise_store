@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    
+    <include layout="@layout/as_actionbar_layout" />
+
+    <FrameLayout 
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        >
+        <ScrollView 
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/zkas_search_view_horz_padding"
+            android:paddingRight="@dimen/zkas_search_view_horz_padding"
+            android:scrollbarStyle="outsideOverlay"
+            >
+		    <LinearLayout 
+		        android:id="@+id/zkas_id_category_container"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal"
+		        >
+		        <LinearLayout 
+		            android:id="@+id/zkas_id_category_left_area_container"
+		            android:layout_width="0dip"
+		            android:layout_weight="1"
+		            android:layout_height="wrap_content"
+		            android:orientation="vertical"
+		            >
+		            <TextView 
+		                android:id="@+id/zkas_id_category_left_title"
+		                android:layout_width="match_parent"
+		                android:layout_height="@dimen/zkas_search_keyword_title_height"
+		                android:textSize="@dimen/zkas_search_keyword_title_text_size"
+		                android:textColor="@color/zkas_font_color_assistant"
+		                android:gravity="left|center_vertical"
+		                android:text="@string/as_keyword_title_software_text"
+		                />
+		            
+		        </LinearLayout>
+		        
+		        <LinearLayout 
+		            android:id="@+id/zkas_id_category_right_area_container"
+		            android:layout_width="0dip"
+		            android:layout_weight="1"
+		            android:layout_height="wrap_content"
+		            android:orientation="vertical"
+		            android:layout_marginLeft="@dimen/zkas_search_keyword_type_center_margin"
+		            >
+		            <TextView 
+		                android:id="@+id/zkas_id_category_right_title"
+		                android:layout_width="match_parent"
+		                android:layout_height="@dimen/zkas_search_keyword_title_height"
+		                android:textSize="@dimen/zkas_search_keyword_title_text_size"
+		                android:textColor="@color/zkas_font_color_assistant"
+		                android:gravity="left|center_vertical"
+		                android:text="@string/as_keyword_title_game_text"
+		                />
+		            
+		        </LinearLayout>
+		    </LinearLayout>
+	    </ScrollView>
+
+
+		<include
+
+
+			layout="@layout/line2"/>
+
+	    <!--<ImageView -->
+	        <!--android:layout_width="match_parent"-->
+	        <!--android:layout_height="wrap_content"-->
+	        <!--android:background="@drawable/zkas_top_shade"-->
+	        <!--/>-->
+    </FrameLayout>
+</LinearLayout>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="app_name">App Market</string>
+    <string name="app_name_duocai">DuoCai App Market</string>
+    <string name="app_name_apphome">App Home</string>
+
+    <!-- 应用更新 -->
+    <string name="check_version">检查更新</string>
+    <string name="version_prompt">当前版本号：</string>
+    <string name="getting_update">正在获取最新版本信息……</string>
+    <string name="as_already_newest">当前已是最新版本</string>
+    <string name="new_update">有新版本了</string>
+    <string name="update_version">版本号：</string>
+    <string name="update_date">更新日期：</string>
+    <string name="update_content">更新内容：</string>
+    <string name="update_now">立即更新</string>
+    <string name="version_install_text">现在就安装</string>
+    <string name="version_delay_install_text">推迟</string>
+
+    <!-- 主界面 -->
+    <string name="loading">加载中……</string>
+    <string name="click_to_load_more">点击加载更多</string>
+    <string name="as_list_more">更多</string>
+    <string name="as_necessary">必备</string>
+    <string name="as_onekey_install_all">一键装机</string>
+    <string name="as_install_all">全部安装</string>
+    <string name="as_all_apk_count">%1$s个应用，</string>
+
+    <!-- APP Settings -->
+    <string name="as_settings_auto_install_app_name">自动安装应用</string>
+    <string name="as_settings_auto_install_app_summary">安装应用时，省去繁琐点击</string>
+    <string name="as_settings_installed_delete_apk_name">安装后删除安装包</string>
+    <string name="as_settings_installed_delete_apk_summary">安装后自动删除安装包，节省空间</string>
+    <string name="as_settings_wifi_auto_download_name">零流量更新</string>
+    <string name="as_settings_wifi_auto_download_summary">开启后，WiFi网络下自动下载应用更新包</string>
+    <string name="as_settings_clear_cache_name">清理缓存</string>
+    <string name="as_settings_clear_cache_summary">图片、安装包等缓存文件</string>
+    <string name="as_settings_clear_button">立刻清理</string>
+    <string name="as_settings_actionbar_title">返回</string>
+    <string name="as_settings_clearcache_title">清理缓存</string>
+    <string name="as_settings_clearcache_content">确定清除图片、安装包等缓存文件？</string>
+    <string name="settings_clear_cache_done_prompt">已清除所有缓存</string>
+    <string name="as_sort">分类</string>
+    <string name="as_manger">管理</string>
+    <string name="as_xitonggongju">系统工具</string>
+    <string name="as_zhutimeihua">主题美化</string>
+    <string name="as_shejiaoliaotian">社交聊天</string>
+    <string name="as_wangluogongju">网络工具</string>
+    <string name="as_meitiyule">媒体娱乐</string>
+    <string name="as_zhuomianchajian">桌面插件</string>
+    <string name="as_zixunyuedu">资讯阅读</string>
+    <string name="as_chuxinggouwu">出行购物</string>
+    <string name="as_shenghuozhushou">生活助手</string>
+    <string name="as_shiyonggongju">实用工具</string>
+    <string name="as_caijingtouzi">财经投资</string>
+    <string name="as_zhangshangwangyou">掌上网游</string>
+    <string name="as_xiuxianyouxi">休闲游戏</string>
+    <string name="as_yizhiyouxi">益智游戏</string>
+    <string name="as_qipaiyouxi">棋牌游戏</string>
+    <string name="as_tiyuyundong">体育运动</string>
+    <string name="as_dongzuosheji">动作射击</string>
+    <string name="as_qita">其他</string>
+    <string name="sa_tab_download">下载</string>
+    <string name="sa_tab_update">升级</string>
+    <string name="as_search_hint_text">搜索：</string>
+    <string name="as_tab_recommend_text">推荐</string>
+    <string name="as_tab_game_text">游戏</string>
+    <string name="as_tab_software_text">应用</string>
+    <string name="as_list_load_failed_prompt">加载列表失败。</string>
+    <string name="as_refresh_btn_again">点击重新加载……</string>
+    <string name="as_list_loading_prompt">正在加载，请稍后……</string>
+    <string name="as_keyword_title_software_text">热门软件</string>
+    <string name="as_keyword_title_game_text">热门游戏</string>
+    <string name="as_search_progress_prompt_text">正在搜索，请稍候……</string>
+    <string name="as_search_failed_prompt_text">搜索失败，请检查网络连接情况。</string>
+    <string name="as_search_empty_prompt_text">未搜索到相关结果，请更新关键字。</string>
+    <string name="as_network_unavailable">您的网络不可用，请开启网络连接。</string>
+    <string name="as_detail_tab_detail">详情</string>
+    <string name="as_detail_tab_related">相关</string>
+    <string name="as_detail_appcontent_introduct">内容提要</string>
+    <string name="as_listitem_free_m">免流量</string>
+    <string name="as_listitem_download_button_open">打开</string>
+    <string name="as_listitem_download_button_uninstalling">正在卸载</string>
+    <string name="as_listitem_download_button_install">安装</string>
+    <string name="as_listitem_download_button_installing">正在安装</string>
+    <string name="as_listitem_related_title">类似应用</string>
+    <string name="as_listitem_popular_title">大家喜欢</string>
+    <string name="as_listitem_people_download_title">同时下载</string>
+    <string name="as_listitem_hot_title">热门应用</string>
+    <string name="as_listitem_popular_clickview_title">全部</string>
+    <string name="as_listitem_download_button_update">更新</string>
+    <string name="as_listitem_download_button_resume">继续下载</string>
+    <string name="as_listitem_download_button_waiting">等待下载</string>
+    <string name="as_listitem_download_button_error">重新下载</string>
+    <string name="as_detail_tab_tag_sec">安全</string>
+    <string name="as_detail_tab_tag_free">免费</string>
+    <string name="as_cancel">取消</string>
+    <string name="as_ok">确定</string>
+
+    <!-- 服务 -->
+    <string name="install_service_title">开启自动装</string>
+    <string name="install_service_hint">开启该服务后，安装应用时无需繁琐点击，系统会自动帮您完成操作。</string>
+    <string name="install">安装</string>
+    <string name="next">下一步</string>
+    <string name="done">完成</string>
+
+    <!-- 欢迎界面 -->
+    <string name="ad_tag">AD广告</string>
+    <string name="skip">跳过</string>
+
+    <!-- 管理 -->
+    <string name="as_inprogress">进行中的任务</string>
+    <string name="as_completedprogress">已完成的任务</string>
+    <string name="as_listitem_hot_title2">热门推荐</string>
+
+    <!-- 下载管理 -->
+    <string name="as_clear">清除</string>
+    <string name="as_startins">开启自动装</string>
+    <string name="as_explain">安装应用时，省去繁琐点击</string>
+    <string name="as_gonow">立即前往</string>
+    <string name="no_download_prompt">没有下载任务哦!</string>
+    <string name="no_upgrade_prompt">好极了!所有应用都是最新版!</string>
+    <string name="upgrade_all">全部升级</string>
+
+    <string name="prompt">提示</string>
+    <string name="accept">同意</string>
+    <string name="quit">关闭</string>
+    <string name="checkboxtitle">不再提示</string>
+    <string name="prompt_permission">应用商店需要访问联网、定位、记录IMEI、短信读取，相机权限。是否同意使用该应用？</string>
+
+    <string name="history_clear">清空历史记录</string>
+
+    <string name="back_toast">再点击一次返回，将退出应用！</string>
+
+    <string name="title_search">搜索</string>
+
+    <string name="shortcut_folder_title">推荐应用</string>
+
+    <string name="permission_not_grant">没有授予应用启动所必须的权限，请在系统设置中授予权限再打开应用。</string>
+    <string name="no_app">没有此应用</string>
+
+
+    <string name="topwise_guide_tuijian">装机必备推荐</string>
+    <string name="topwise_guide_game">热门游戏推荐</string>
+    <string name="topwise_guide_jump">跳过</string>
+    <string name="topwise_guide_step">下一步</string>
+    <string name="topwise_guide_finish">完成</string>
+    <string name="topwise_guide_lebel_decreption">勾选您喜欢的,稍后为您安装</string>
+    <string name="topwise_guide_lebel_decreption_finish1">已选中</string>
+    <string name="topwise_guide_lebel_decreption_finish2">个应用</string>
+    <string name="topwise_guide_lebel_decreption_init">已选中12个应用</string>
+    <string name="topwise_guide_toast_part_one">正在为您安装</string>
+    <string name="topwise_guide_toast_part_two">个应用</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="topwise_board_login">立即登陆</string>
+    <string name="topwise_board_settings">设置</string>
+    <string name="topwise_board_about">关于</string>
+    <string name="topwise_board_about_description">应用商店</string>
+    <string name="topwise_board_about_protocel">使用许可协议</string>
+    <string name="topwise_board_about_privacy_protected">隐私保护</string>
+    <string name="topwise_board_about_disclaimer">免责声明</string>
+    <string name="topwise_board_about_version">版权所有:深圳鼎智通讯股份有限公司</string>
+    <string name="topwise_board_skins">主题皮肤</string>
+    <string name="topwise_board_option">意见反馈</string>
+    <string name="topwise_board_option_description">非常感谢您对我们的支持和帮助,我们将会更加努力,为您提供更好的产品体验和服务内容.</string>
+    <string name="topwise_board_option_description_hint">输入建议内容</string>
+    <string name="topwise_board_option_description_hint1">可填入电话或QQ</string>
+    <string name="topwise_board_option_description1">联系方式:</string>
+    <string name="topwise_board_option_button_commit">提交</string>
+    <string name="topwise_board_option_button_commit_message">非常感谢您对我们的支持和帮助,我们将会更加努力,为您提供更好的产品体验和服务内容.</string>
+    <string name="topwise_board_option_button_commit_message1">请先输入内容或您的联系方式,谢谢</string>
+    <string name="topwise_board_page_download">下载管理</string>
+    <string name="topwise_board_page_download1">当前有</string>
+    <string name="topwise_board_page_download2">个任务</string>
+    <string name="topwise_board_page_update">应用更新</string>
+    <string name="topwise_board_page_update1">个应用待更新</string>
+    <string name="topwise_board_page_clear">个安装包可清理</string>
+    <string name="topwise_board_page_rubish">安装包清理</string>
+    <string name="topwise_board_page_rubish_part1">安装包如下:</string>
+    <string name="topwise_board_page_rubish_part2">清理安装包</string>
+    <string name="topwise_board_page_remove">应用卸载</string>
+    <string name="topwise_board_page_installed">已安装0个应用</string>
+    <string name="topwise_board_page_no_model">此功能正在马不停蹄的研发中,敬请期待</string>
+    <string name="title_activity_board">BoardActivity</string>
+    <string name="title_activity_package_remove">PackageRemoveActivity</string>
+    <string name="title_activity_store_option">StoreOptionActivity</string>
+    <string name="title_activity_about">AboutActivity</string>
+    <string name="title_activity_protocel">ProtocelActivity</string>
+</resources>

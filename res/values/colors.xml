@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#FFFFFFFF</color>
+    <color name="as_window_bg_color">#FFFAFAFA</color>
+    <color name="as_list_foot_text_color">#8A000000</color>
+    
+    <color name="as_title_bar_title_text_color">#DD000000</color>
+    <color name="as_tab_bar_tab_text_color_normal">#8A000000</color>
+    <color name="as_tab_bar_tab_text_color_selected">@color/as_normal_text_color</color>
+    
+    <color name="as_wait_view_text_color">#FF808080</color>
+    <color name="as_wait_view_bg">#FFF4F4F4</color>
+    <color name="wait_view_bg_color">#FFF0F1F4</color>
+    <color name="zkas_banner_default_color">#FFF0F1F4</color>
+    
+    <color name="as_list_bg_color">#FFFAFAFA</color>
+    
+    <color name="zkas_list_item_app_name_text_color">#DE000000</color>
+    <color name="zkas_list_item_app_descrip_text_color">#89000000</color>
+    <color name="zkas_list_item_app_btn_text_color">#FFFFFFFF</color>
+    
+    <color name="zkas_list_item_more_text_color">#89000000</color>
+    
+    <color name="zkas_list_item_text_link_text_color">#89000000</color>
+    <color name="zkas_list_item_title_text_color">#505050</color>
+    
+    <color name="as_normal_text_color">#0ACCCA</color>
+    <color name="zkas_progress_btn_open_text_color">#FF3D8AFD</color>
+    <color name="zkas_progress_btn_progressing_text_color">#FF000000</color>
+    
+    <color name="zkas_font_color_primary">#DD000000</color>
+    <color name="zkas_font_color_assistant">#8A000000</color>
+    <color name="zkas_font_color_search_input">#999999</color>
+    <color name="zkas_appdetail_default_bg_color">#FFF0F1F4</color>
+    
+    <color name="zkas_dlbtn_prompt_text_color">#FFFFFFFF</color>
+    
+    <color name="zkas_larger_banner_default_background">#FFF0F1F4</color>
+
+    <color name="zkas_search_edit_text_color">#DE000000</color>
+    <color name="zkas_search_keyword_item_text_color">#FFFFFFFF</color>
+    <color name="zkas_sec_free_tag_color">#18C78B</color>
+    
+    <!-- dialog -->
+    <color name="alert_dialog_list_item_text_color_normal">#FF0E0E0E</color>
+    <color name="alert_dialog_list_item_text_color_disabled">#FFBFBFBF</color>
+    
+    <color name="font_color_X">#FF323232</color>
+    <color name="font_color_divider">#FFe0e0e0</color>
+    <color name="dialog_button_default_text_color">#FF323232</color>
+    <color name="dialog_button_disabled_text_color">#B2323232</color>
+    <color name="dialog_button_pressed_text_color">#FF323232</color>
+    
+    <color name="zkas_ball_color">@color/as_normal_text_color</color>
+    <color name="zkas_menu_item_text_color_normal">@color/as_normal_text_color</color>
+    <color name="zkas_menu_item_text_color_pressed">#FF266ED9</color>
+    <color name="topwise_text_color">#141414</color>
+    <color name="topwise_text_color_smalltitle">#787878</color>
+    <color name="topwise_line_color">#e2e2e2</color>
+    <color name="topwise_aisle_color">#f2f2f2</color>
+</resources>

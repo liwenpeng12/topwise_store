@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fffafafa"
+    >
+
+    <LinearLayout
+        android:id="@+id/logo_layout"
+        android:layout_width="match_parent"
+        android:layout_height="108dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/logo_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/as_welcome_logo" />
+
+        <TextView
+            android:id="@+id/version_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:textColor="#808080"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/welcome_ad_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/logo_layout">
+
+        <ImageView
+            android:id="@+id/welcome_ad"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/adtag_layout"
+        android:layout_width="60dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/ad_tag"
+            android:textColor="#F8FFFFFF"
+            android:textSize="10dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/skip_layout"
+        android:layout_width="60dp"
+        android:layout_height="24dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:id="@+id/skip_txt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/as_skip_bg"
+            android:gravity="center"
+            android:text="@string/skip"
+            android:textColor="#F8FFFFFF"
+            android:textSize="12dp" />
+    </RelativeLayout>
+
+</RelativeLayout>

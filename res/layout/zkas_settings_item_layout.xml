@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.topwise.topos.appstore.view.AppStoreSettingsItem xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:background="#fafafa">
+
+
+    <include
+        android:id="@+id/zkas_item_top_shade"
+        layout="@layout/line"
+        android:visibility="gone" />
+    <!--<ImageView-->
+    <!--android:id="@+id/zkas_item_top_shade" -->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@drawable/zkas_top_shade"-->
+    <!--android:visibility="gone"-->
+    <!--/>-->
+    <LinearLayout
+        android:id="@+id/settings_item_name_summary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|center_vertical"
+        android:orientation="vertical"
+        android:paddingLeft="16dp">
+
+        <TextView
+            android:id="@+id/settings_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:textColor="@color/zkas_font_color_primary"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/settings_item_summary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:textColor="@color/zkas_font_color_assistant"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <com.topwise.topos.appstore.view.CheckSwitchButton
+        android:id="@+id/mCheckSwithcButton"
+        android:layout_width="wrap_content"
+        android:layout_marginRight="16dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|center_vertical"
+        android:enabled="true"/>
+
+    <TextView
+        android:id="@+id/setting_item_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|center_vertical"
+        android:gravity="center"
+        android:paddingRight="16dp"
+        android:textColor="@color/zkas_menu_item_text_color"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+
+    <ImageView
+        android:id="@+id/diver_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/zkas_list_divider" />
+
+
+</com.topwise.topos.appstore.view.AppStoreSettingsItem>

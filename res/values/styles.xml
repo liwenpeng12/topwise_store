@@ -1,0 +1,66 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppTheme" parent="android:style/Theme.Holo.NoActionBar">
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:windowNoDisplay">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/as_window_bg_color</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Activity</item>
+    </style>
+
+    
+    <style name="ListFootProgressBarStyle" parent="@android:style/Widget.Holo.Light.ProgressBar">
+        <item name="android:indeterminateDrawable">@drawable/as_list_foot_progress_medium</item>
+    </style>
+
+    <style name="zkas_app_title">
+        <item name="android:textSize">@dimen/zkas_list_item_title_text_size</item>
+        <item name="android:textColor">@color/zkas_font_color_assistant</item>
+        <item name="android:paddingLeft">@dimen/zkas_list_item_title_horz_padding</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    
+    <style name="zkas_banner_desc">
+        <item name="android:textSize">@dimen/zkas_banner_descrip_text_size</item>
+        <item name="android:textColor">@color/zkas_font_color_assistant</item>
+        <item name="android:paddingLeft">@dimen/zkas_list_item_title_horz_padding</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    
+    <style name="zkas_main_tabbar">
+        <item name="android:textSize">@dimen/zkas_main_tabbar_tab_text_size</item>
+        <item name="android:textColor">@color/as_tab_bar_tab_text_color_normal</item>
+        <item name="android:gravity">center</item>
+    </style>
+    
+    <!-- dialog -->
+     <!-- dialog -->
+    <style name="dialogWindowAnim" parent="android:Animation" mce_bogus="1">  
+        <item name="android:windowEnterAnimation">@anim/as_dialog_enter_anim</item>
+        <item name="android:windowExitAnimation">@anim/as_dialog_exit_anim</item>
+    </style>
+    
+    <style name="AlertDialogButtonRigoStyle">
+        <item name="android:background">@drawable/as_default_btn_bg</item>
+        <item name="android:textColor">@color/as_dialog_button_text_color</item>
+        <item name="android:minHeight">@dimen/alert_dialog_button_min_height</item>
+        <item name="android:minWidth">64dip</item>
+        <item name="android:textSize">@dimen/BASIC_FONT_SIZE_C</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+    </style>
+    <style name="ProgressBarHorizontalStyle" parent="@android:style/Widget.Holo.Light.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/as_widget_progress_horizontal</item>
+    </style>
+     <style name="ProgressBarStyle" parent="@android:style/Widget.Holo.Light.ProgressBar">
+        <item name="android:indeterminateDrawable">@drawable/as_widget_progress_medium</item>
+    </style>
+    
+    <style
+        name="NotificationTitle"
+        parent="android:TextAppearance.StatusBar.EventContent.Title" />
+     <style
+        name="NotificationContent"
+        parent="android:TextAppearance.StatusBar.EventContent" />
+</resources>

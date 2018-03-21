@@ -1,0 +1,306 @@
+package com.topwise.topos.appstore.conn.easyhttp;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.Closeable;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.Arrays;
+import java.util.Random;
+
+import org.apache.http.Header;
+import org.apache.http.HttpEntity;
+import org.apache.http.message.BasicHeader;
+
+import com.topwise.topos.appstore.utils.LogEx;
+
+import android.text.TextUtils;
+
+public class MultipartEntity implements HttpEntity {
+	public static final String TAG = "MultipartEntity";
+	 
+    private final static char[] MULTIPART_CHARS = "-_1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            .toCharArray();
+    /**
+     * 换行符
+     */
+    private final String NEW_LINE_STR = "\r\n";
+    private final String CONTENT_TYPE = "Content-Type: ";
+    private final String CONTENT_DISPOSITION = "Content-Disposition: ";
+    /**
+     * 文本参数和字符集
+     */
+    private final String TYPE_TEXT_CHARSET = "text/plain; charset=UTF-8";
+ 
+    /**
+     * 字节流参数
+     */
+    private final String TYPE_OCTET_STREAM = "application/octet-stream";
+    /**
+     * 二进制参数
+     */
+    private final byte[] BINARY_ENCODING = "Content-Transfer-Encoding: binary\r\n\r\n".getBytes();
+    /**
+     * 文本参数
+     */
+    private final byte[] BIT_ENCODING = "Content-Transfer-Encoding: 8bit\r\n\r\n".getBytes();
+ 
+    /**
+     * 分隔符
+     */
+    private String mBoundary = null;
+    /**
+     * 输出流
+     */
+    ByteArrayOutputStream mOutputStream = new ByteArrayOutputStream();
+    
+    boolean mHasWriteLastBoundary = false;
+    public MultipartEntity() {
+        this.mBoundary = generateBoundary();
+    }
+ 
+    /**
+     * 生成分隔符
+     * 
+     * @return
+     */
+    private final String generateBoundary() {
+        final StringBuffer buf = new StringBuffer();
+        final Random rand = new Random();
+        for (int i = 0; i < 30; i++) {
+            buf.append(MULTIPART_CHARS[rand.nextInt(MULTIPART_CHARS.length)]);
+        }
+        return buf.toString();
+    }
+ 
+    /**
+     * 参数开头的分隔符
+     * 
+     * @throws IOException
+     */
+    private void writeFirstBoundary() throws IOException {
+        mOutputStream.write(("--" + mBoundary + "\r\n").getBytes());
+    }
+    private void writeLastBoundary() {
+    	if(mHasWriteLastBoundary) {
+    		return;
+    	}
+        try {
+			mOutputStream.write(("--" + mBoundary + "--\r\n").getBytes());
+			mHasWriteLastBoundary = true;
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
+ 
+    /**
+     * 添加文本参数
+     * 
+     * @param key
+     * @param value
+     */
+    public void addStringPart(final String paramName, final String value) {
+        writeToOutputStream(paramName, value.getBytes(), TYPE_TEXT_CHARSET, BIT_ENCODING, "");
+    }
+ 
+    /**
+     * 将数据写入到输出流中
+     * 
+     * @param key
+     * @param rawData
+     * @param type
+     * @param encodingBytes
+     * @param fileName
+     */
+    private void writeToOutputStream(String paramName, byte[] rawData, String type,
+            byte[] encodingBytes,
+            String fileName) {
+        try {
+            writeFirstBoundary();
+            mOutputStream.write((CONTENT_TYPE + type + NEW_LINE_STR).getBytes());
+            mOutputStream
+                    .write(getContentDispositionBytes(paramName, fileName));
+            mOutputStream.write(encodingBytes);
+            mOutputStream.write(rawData);
+            mOutputStream.write(NEW_LINE_STR.getBytes());
+        } catch (final IOException e) {
+            e.printStackTrace();
+        }
+    }
+ 
+    /**
+     * 添加二进制参数, 例如Bitmap的字节流参数
+     * 
+     * @param key
+     * @param rawData
+     */
+    public void addBinaryPart(String paramName, final byte[] rawData) {
+        writeToOutputStream(paramName, rawData, TYPE_OCTET_STREAM, BINARY_ENCODING, "no-file");
+    }
+    
+    public void addBinaryPart(String paramName, final InputStream[] rawData) {
+        writeToOutputStream(paramName, rawData, TYPE_OCTET_STREAM, BINARY_ENCODING, "no-file");
+    }
+    
+    private void writeToOutputStream(String paramName, InputStream[] rawData, String type,
+            byte[] encodingBytes,
+            String fileName) {
+        try {
+            writeFirstBoundary();
+            mOutputStream.write((CONTENT_TYPE + type + NEW_LINE_STR).getBytes());
+            mOutputStream
+                    .write(getContentDispositionBytes(paramName, fileName));
+            mOutputStream.write(encodingBytes);
+            for(InputStream is:rawData) {
+    			byte[] buffer = new byte[1024*10];
+    			while(true) {
+    				int length = is.read(buffer);
+    				LogEx.d(TAG, "length == " + length);
+    				LogEx.d(TAG, "" + Arrays.toString(buffer));
+    				if(length == -1) {
+    				}
+    				mOutputStream.write(buffer,0,length);
+    			}
+            }
+
+            mOutputStream.write(NEW_LINE_STR.getBytes());
+        } catch (final IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    
+    public void addBinaryPart(String paramName, final InputStream rawData) {
+        writeToOutputStream(paramName, rawData, TYPE_OCTET_STREAM, BINARY_ENCODING, "no-file");
+    }
+    
+    private void writeToOutputStream(String paramName, InputStream rawData, String type,
+            byte[] encodingBytes,
+            String fileName) {
+        try {
+            writeFirstBoundary();
+            mOutputStream.write((CONTENT_TYPE + type + NEW_LINE_STR).getBytes());
+            mOutputStream
+                    .write(getContentDispositionBytes(paramName, fileName));
+            mOutputStream.write(encodingBytes);
+            
+			byte[] buffer = new byte[1024*10];
+			while(true) {
+				int length = rawData.read(buffer);
+				LogEx.d(TAG, "length == " + length);
+//				LogEx.getInstance().d(TAG, "" + Arrays.toString(buffer));
+				if(length == -1) {
+					break;
+				}
+				mOutputStream.write(buffer,0,length);
+			}
+            mOutputStream.write(NEW_LINE_STR.getBytes());
+        } catch (final IOException e) {
+            e.printStackTrace();
+        }
+    }
+ 
+    /**
+     * 添加文件参数,可以实现文件上传功能
+     * 
+     * @param key
+     * @param file
+     */
+    public void addFilePart(final String key, final File file) {
+        InputStream fin = null;
+        try {
+            fin = new FileInputStream(file);
+            writeFirstBoundary();
+            final String type = CONTENT_TYPE + TYPE_OCTET_STREAM + NEW_LINE_STR;
+            mOutputStream.write(getContentDispositionBytes(key, file.getName()));
+            mOutputStream.write(type.getBytes());
+            mOutputStream.write(BINARY_ENCODING);
+ 
+            final byte[] tmp = new byte[4096];
+            int len = 0;
+            while ((len = fin.read(tmp)) != -1) {
+                mOutputStream.write(tmp, 0, len);
+            }
+            mOutputStream.flush();
+        } catch (final IOException e) {
+            e.printStackTrace();
+        } finally {
+            closeSilently(fin);
+        }
+    }
+ 
+    private void closeSilently(Closeable closeable) {
+        try {
+            if (closeable != null) {
+                closeable.close();
+            }
+        } catch (final IOException e) {
+            e.printStackTrace();
+        }
+    }
+ 
+    private byte[] getContentDispositionBytes(String paramName, String fileName) {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(CONTENT_DISPOSITION + "form-data; name=\"" + paramName + "\"");
+        // 文本参数没有filename参数,设置为空即可
+        if (!TextUtils.isEmpty(fileName)) {
+            stringBuilder.append("; filename=\""
+                    + fileName + "\"");
+        }
+ 
+        return stringBuilder.append(NEW_LINE_STR).toString().getBytes();
+    }
+ 
+    @Override
+    public long getContentLength() {
+    	writeLastBoundary();
+        return mOutputStream.toByteArray().length;
+    }
+ 
+    @Override
+    public Header getContentType() {
+        return new BasicHeader("Content-Type", "multipart/form-data; boundary=" + mBoundary);
+    }
+ 
+    @Override
+    public boolean isChunked() {
+        return false;
+    }
+ 
+    @Override
+    public boolean isRepeatable() {
+        return false;
+    }
+ 
+    @Override
+    public boolean isStreaming() {
+        return false;
+    }
+ 
+    @Override
+    public void writeTo(final OutputStream outstream) throws IOException {
+        outstream.write(mOutputStream.toByteArray());
+    }
+ 
+    @Override
+    public Header getContentEncoding() {
+        return null;
+    }
+ 
+    @Override
+    public void consumeContent() throws IOException,
+            UnsupportedOperationException {
+        if (isStreaming()) {
+            throw new UnsupportedOperationException(
+                    "Streaming entity does not implement #consumeContent()");
+        }
+    }
+ 
+    @Override
+    public InputStream getContent() {
+        return new ByteArrayInputStream(mOutputStream.toByteArray());
+    }
+}
