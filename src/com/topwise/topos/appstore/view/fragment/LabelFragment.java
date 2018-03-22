@@ -32,12 +32,12 @@ public class LabelFragment extends MainListFragment {
     @Override
     public void onResume() {
         super.onResume();
-        MobclickAgent.onPageStart("LabelFragment");
+    //    MobclickAgent.onPageStart("LabelFragment");
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        MobclickAgent.onPageEnd("LabelFragment");
+    //    MobclickAgent.onPageEnd("LabelFragment");
     }
 }

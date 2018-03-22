@@ -45,7 +45,7 @@ public class AdsManager extends BaseManager {
     }
 
     public AdsManager() {
-        MainSDK.init(AppStoreWrapperImpl.getInstance().getAppContext());
+      //  MainSDK.init(AppStoreWrapperImpl.getInstance().getAppContext());
         try {
             ApplicationInfo appInfo = AppStoreWrapperImpl.getInstance().getAppContext().getPackageManager().getApplicationInfo(AppStoreWrapperImpl.getInstance().getAppContext().getPackageName(), PackageManager.GET_META_DATA);
             mPlacementId = appInfo.metaData.getString("ADS_PLACEMENTID");

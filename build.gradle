@@ -1,9 +1,10 @@
 buildscript {
     repositories {
         jcenter()
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'com.android.tools.build:gradle:3.0.1'
     }
 }
 apply plugin: 'com.android.application'
@@ -17,22 +18,24 @@ repositories {
 allprojects {
     repositories {
         mavenCentral()
+        google()
     }
 }
 
 dependencies {
-    compile fileTree(include: '*.jar', dir: 'libs')
+    provided fileTree(include: '*.jar', dir: 'libs')
     //    provided fileTree(dir: 'libs', include: '*.jar')
-    compile 'com.android.support:support-v13:25.0.1'
-    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
     compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    compile 'com.android.support:support-v13:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'org.greenrobot:eventbus:3.0.0'
 }
 
 android {
     compileSdkVersion 25
-    buildToolsVersion '25.0.0'
+    buildToolsVersion '26.0.2'
+    flavorDimensions "versionCode"
 
     sourceSets {
         main {

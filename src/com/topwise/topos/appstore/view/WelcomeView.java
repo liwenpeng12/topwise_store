@@ -140,34 +140,36 @@ public class WelcomeView extends RelativeLayout {
             }
         }, 100);
 
-        mSplashAdView = AdsManager.getInstance().createSplashAdView(mContext, new SplashAdViewCallBack() {
-            @Override
-            public void onAdPresent(String s) {
-                LogEx.d(s);
-                mSkipLayout.setVisibility(View.VISIBLE);
-                mAdTagLayout.setVisibility(View.VISIBLE);
-                if (mWelcomeGoneListener != null) {
-                    mWelcomeGoneListener.onWelcomeGoneDelayed(5 * 1000);
-                }
-            }
-
-            @Override
-            public void onAdFailed(String s, String s1) {
-                LogEx.d(s, s1);
-            }
-
-            @Override
-            public void onAdDismissed(String s) {
-                LogEx.d(s);
-            }
-
-            @Override
-            public void onAdClick(String s) {
-                if (mWelcomeGoneListener != null) {
-                    mWelcomeGoneListener.onWelcomeGoneDelayed(0);
-                }
-            }
-        });
+        //modified by liwenpeng
+        mSplashAdView = null;
+//        mSplashAdView = AdsManager.getInstance().createSplashAdView(mContext, new SplashAdViewCallBack() {
+//            @Override
+//            public void onAdPresent(String s) {
+//                LogEx.d(s);
+//                mSkipLayout.setVisibility(View.VISIBLE);
+//                mAdTagLayout.setVisibility(View.VISIBLE);
+//                if (mWelcomeGoneListener != null) {
+//                    mWelcomeGoneListener.onWelcomeGoneDelayed(5 * 1000);
+//                }
+//            }
+//
+//            @Override
+//            public void onAdFailed(String s, String s1) {
+//                LogEx.d(s, s1);
+//            }
+//
+//            @Override
+//            public void onAdDismissed(String s) {
+//                LogEx.d(s);
+//            }
+//
+//            @Override
+//            public void onAdClick(String s) {
+//                if (mWelcomeGoneListener != null) {
+//                    mWelcomeGoneListener.onWelcomeGoneDelayed(0);
+//                }
+//            }
+//        });
         if (mSplashAdView != null) {
             mWelcomeAdContainer.addView(mSplashAdView);
             if (mWelcomeGoneListener != null) {

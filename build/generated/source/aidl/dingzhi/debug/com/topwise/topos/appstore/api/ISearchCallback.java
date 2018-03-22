@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: /work/OS6739/vendor/topwise/packages/apps/TopWise_Store/src/com/topwise/topos/appstore/api/ISearchCallback.aidl
+ * Original file: G:\\git_project\\topwise_store\\src\\com\\topwise\\topos\\appstore\\api\\ISearchCallback.aidl
  */
 package com.topwise.topos.appstore.api;
 public interface ISearchCallback extends android.os.IInterface

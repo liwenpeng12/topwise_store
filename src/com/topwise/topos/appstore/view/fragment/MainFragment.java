@@ -237,13 +237,13 @@ public class MainFragment extends BaseFragment  implements AppUpgradeCountListen
     @Override
     public void onResume() {
         super.onResume();
-        MobclickAgent.onPageStart("MainFragment");
+//        MobclickAgent.onPageStart("MainFragment");
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        MobclickAgent.onPageEnd("MainFragment");
+     //   MobclickAgent.onPageEnd("MainFragment");
     }
 
     @Override

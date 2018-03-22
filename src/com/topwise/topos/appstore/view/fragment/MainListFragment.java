@@ -199,13 +199,13 @@ public class MainListFragment extends BaseListLoadingFragment
     @Override
     public void onResume() {
         super.onResume();
-        MobclickAgent.onPageStart("MainListFragment");
+//        MobclickAgent.onPageStart("MainListFragment");
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        MobclickAgent.onPageEnd("MainListFragment");
+   //     MobclickAgent.onPageEnd("MainListFragment");
     }
 
     @Override

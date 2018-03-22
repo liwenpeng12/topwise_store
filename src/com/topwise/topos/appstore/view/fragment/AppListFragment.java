@@ -34,12 +34,12 @@ public class AppListFragment extends MainListFragment {
     @Override
     public void onResume() {
         super.onResume();
-        MobclickAgent.onPageStart("AppListFragment");
+    //    MobclickAgent.onPageStart("AppListFragment");
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        MobclickAgent.onPageEnd("AppListFragment"); 
+   //     MobclickAgent.onPageEnd("AppListFragment");
     }
 }

@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="__local_jars__:/work/OS6739/vendor/topwise/packages/apps/TopWise_Store/libs/org.apache.http.legacy.jar:unspecified@jar">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/libs/org.apache.http.legacy.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

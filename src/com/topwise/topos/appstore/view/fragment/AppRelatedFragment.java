@@ -102,13 +102,13 @@ public class AppRelatedFragment extends MainListFragment {
     @Override
     public void onResume() {
         super.onResume();
-        MobclickAgent.onPageStart("AppRelatedFragment");
+    //    MobclickAgent.onPageStart("AppRelatedFragment");
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        MobclickAgent.onPageEnd("AppRelatedFragment"); 
+   //     MobclickAgent.onPageEnd("AppRelatedFragment");
     }
 
     @Override

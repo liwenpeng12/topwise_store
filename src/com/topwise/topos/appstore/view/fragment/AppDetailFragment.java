@@ -237,13 +237,13 @@ public class AppDetailFragment extends BaseFragment implements OnClickListener {
     @Override
     public void onResume() {
         super.onResume();
-        MobclickAgent.onPageStart("AppDetailFragment");
+    //    MobclickAgent.onPageStart("AppDetailFragment");
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        MobclickAgent.onPageEnd("AppDetailFragment");
+    //    MobclickAgent.onPageEnd("AppDetailFragment");
     }
 
     private void initViews() {

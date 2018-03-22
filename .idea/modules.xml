@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/TopWise_Store.iml" filepath="$PROJECT_DIR$/TopWise_Store.iml" />
+      <module fileurl="file://$PROJECT_DIR$/topwise_store.iml" filepath="$PROJECT_DIR$/topwise_store.iml" />
     </modules>
   </component>
 </project>

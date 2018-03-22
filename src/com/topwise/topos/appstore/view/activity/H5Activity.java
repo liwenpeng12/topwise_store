@@ -84,14 +84,14 @@ public class H5Activity extends Activity {
     protected void onResume() {
         super.onResume();
         mWebView.onResume();
-        MobclickAgent.onResume(this);
+  //      MobclickAgent.onResume(this);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         mWebView.onPause();
-        MobclickAgent.onPause(this);
+   //     MobclickAgent.onPause(this);
     }
 
     @Override

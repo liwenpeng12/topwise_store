@@ -102,14 +102,14 @@ public class MainActivity extends FragmentActivity{
     protected void onResume() {
         super.onResume();
         //有盟数据分析
-        MobclickAgent.onResume(this);
+//        MobclickAgent.onResume(this);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         //有盟数据分析
-        MobclickAgent.onPause(this);
+   //     MobclickAgent.onPause(this);
     }
 
     @Override

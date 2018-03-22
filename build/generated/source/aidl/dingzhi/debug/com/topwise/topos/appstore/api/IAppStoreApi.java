@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: /work/OS6739/vendor/topwise/packages/apps/TopWise_Store/src/com/topwise/topos/appstore/api/IAppStoreApi.aidl
+ * Original file: G:\\git_project\\topwise_store\\src\\com\\topwise\\topos\\appstore\\api\\IAppStoreApi.aidl
  */
 package com.topwise.topos.appstore.api;
 public interface IAppStoreApi extends android.os.IInterface
@@ -266,11 +266,6 @@ _data.recycle();
 }
 return _result;
 }
-/**
-     * 获取当前应用升级描述
-     * @param id 应用id（即应用包名）
-     * @return 应用新版本描述
-     */
 @Override public java.lang.String getAppUpgradeDesc(java.lang.String id) throws android.os.RemoteException
 {
 android.os.Parcel _data = android.os.Parcel.obtain();
@@ -330,10 +325,5 @@ public boolean resumeDownloadApp(java.lang.String id) throws android.os.RemoteEx
      */
 public boolean pauseDownloadApp(java.lang.String id) throws android.os.RemoteException;
 public int getAppState(java.lang.String id) throws android.os.RemoteException;
-/**
-     * 获取当前应用升级描述
-     * @param id 应用id（即应用包名）
-     * @return 应用新版本描述
-     */
 public java.lang.String getAppUpgradeDesc(java.lang.String id) throws android.os.RemoteException;
 }

@@ -167,13 +167,13 @@ public class OneKeyInstallFragment extends MainListFragment {
     @Override
     public void onResume() {
         super.onResume();
-        MobclickAgent.onPageStart("OneKeyInstallFragment");
+  //      MobclickAgent.onPageStart("OneKeyInstallFragment");
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        MobclickAgent.onPageEnd("OneKeyInstallFragment");
+  //      MobclickAgent.onPageEnd("OneKeyInstallFragment");
     }
     
     @Override

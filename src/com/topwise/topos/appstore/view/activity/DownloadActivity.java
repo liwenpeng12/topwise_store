@@ -99,7 +99,7 @@ public class DownloadActivity extends FragmentActivity {
 
     public void onResume() {
         super.onResume();
-        MobclickAgent.onResume(this);
+  //      MobclickAgent.onResume(this);
         if (getIntent().getIntExtra("mode", 0) == 0) {
             mActionbarView.setSelectedTab(0);
             mViewPager.setCurrentItem(0);
@@ -111,7 +111,7 @@ public class DownloadActivity extends FragmentActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        MobclickAgent.onPause(this);
+   //     MobclickAgent.onPause(this);
     }
 
     @Override

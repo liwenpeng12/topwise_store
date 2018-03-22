@@ -187,7 +187,7 @@ public class SettingsActivity extends Activity implements OnClickListener {
     @Override
     protected void onResume() {
         super.onResume();
-        MobclickAgent.onResume(this);
+     //   MobclickAgent.onResume(this);
         if (mContainer != null) {
             for (int i = 0; i < mContainer.getChildCount(); i++) {
                 if (mContainer.getChildAt(i) != null && mContainer.getChildAt(i) instanceof AppStoreSettingsItem) {
@@ -201,7 +201,7 @@ public class SettingsActivity extends Activity implements OnClickListener {
     @Override
     protected void onPause() {
         super.onPause();
-        MobclickAgent.onPause(this);
+     //   MobclickAgent.onPause(this);
     }
 
     @Override

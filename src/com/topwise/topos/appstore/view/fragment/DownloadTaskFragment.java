@@ -159,13 +159,13 @@ public class DownloadTaskFragment extends BaseFragment implements DownloadManage
     @Override
     public void onResume() {
         super.onResume();
-        MobclickAgent.onPageStart("DownloadTaskFragment");
+  //      MobclickAgent.onPageStart("DownloadTaskFragment");
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        MobclickAgent.onPageEnd("DownloadTaskFragment");
+  //      MobclickAgent.onPageEnd("DownloadTaskFragment");
     }
 
     @Override

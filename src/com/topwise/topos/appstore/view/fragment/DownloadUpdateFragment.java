@@ -207,7 +207,7 @@ public class DownloadUpdateFragment extends BaseFragment {
     @Override
     public void onResume() {
         super.onResume();
-        MobclickAgent.onPageStart("DownloadUpdateFragment");
+   //     MobclickAgent.onPageStart("DownloadUpdateFragment");
         if (Properties.CHANNEL_IVVI.equals(AppStoreWrapperImpl.getInstance().getChannel())
                 || Properties.CHANNEL_COOLMART.equals(AppStoreWrapperImpl.getInstance().getChannel())
                 || Properties.CHANNEL_SHARP.equals(AppStoreWrapperImpl.getInstance().getChannel())) {
@@ -229,7 +229,7 @@ public class DownloadUpdateFragment extends BaseFragment {
     @Override
     public void onPause() {
         super.onPause();
-        MobclickAgent.onPageEnd("DownloadUpdateFragment");
+     //   MobclickAgent.onPageEnd("DownloadUpdateFragment");
     }
     
     @Override

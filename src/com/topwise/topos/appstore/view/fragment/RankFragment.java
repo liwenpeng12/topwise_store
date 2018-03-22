@@ -32,12 +32,12 @@ public class RankFragment extends MainListFragment {
     @Override
     public void onResume() {
         super.onResume();
-        MobclickAgent.onPageStart("RankFragment");
+  //      MobclickAgent.onPageStart("RankFragment");
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        MobclickAgent.onPageEnd("RankFragment");
+ //       MobclickAgent.onPageEnd("RankFragment");
     }
 }
