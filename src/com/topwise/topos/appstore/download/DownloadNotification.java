@@ -53,6 +53,7 @@ public class DownloadNotification {
         }
     }
 
+    //关键
     public synchronized void displayNotification(final DownloadInfo info) {
         if (info == null) {
             return;

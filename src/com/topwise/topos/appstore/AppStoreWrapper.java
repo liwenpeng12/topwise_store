@@ -106,7 +106,7 @@ public class AppStoreWrapper {
      */
     public static interface AppUpgradeCountListener {
         /**
-         * 应用更新个数监听
+         * 应用更新个数监听F
          * @param count 需更新的个数
          */
         public void appUpgradeCount(int count);

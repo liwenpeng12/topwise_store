@@ -128,18 +128,23 @@ public class Protocol {
     public void getHostUrl() {
         JSONObject data = new JSONObject();
         try {
-            data.put("channel", AppStoreWrapperImpl.getInstance().getChannel());
+            data.put("channel", AppStoreWrapperImpl.getInstance().getChannel());//dingzhi
             data.put("appver", AppStoreWrapperImpl.getInstance().getAppVersionCode());
             data.put("imei", AppStoreWrapperImpl.getInstance().getDeviceInfo().getIMEI());
             data.put("apiver", Protocol.PROTOCOL_VERSION);
         } catch (JSONException e) {
             e.printStackTrace();
         }
+        //将渠道号，app版本，IMEI号，api版本利用添加到JsonObject对象中
+        //base64进行加密
         String dataBase64 = Base64.encodeToString(data.toString().getBytes(), Base64.NO_WRAP);
+        //AjaxParam参数携带加密后的信息对象
         HttpManager.getInstance().mAjaxParams.put("data", dataBase64);
         String tm = "" + System.currentTimeMillis()/1000;
         HttpManager.getInstance().mAjaxParams.put("tm", tm);
+        //md5加密
         String secret = Utils.getMd5(dataBase64 + pkey + psecret + tm);
+        //最终加密后的数据
         HttpManager.getInstance().mAjaxParams.put("secret", secret);
         
         new Thread(new Runnable() {
@@ -149,22 +154,32 @@ public class Protocol {
                 if (Properties.CHANNEL_COOLMART.equals(AppStoreWrapperImpl.getInstance().getChannel())) {
                     URL_CTRL = "http://cat.moyumedia.com/query/";
                 }
+                //Fianl post请求传参
                 String t = (String) HttpManager.getInstance().postSync(URL_CTRL);
                 Log.d("zr","getHostUrl的"+URL_CTRL);
                 Log.d("zr","getHostUrl的"+t);
+                Log.d("liwenpeng","得到的参数T:"+t);
                 LogEx.d(t);
+                //抛出异常，不会往下走
                 try {
                     JSONObject mainJson = new JSONObject(t);
+                    Log.d("liwenpeng","mainJson"+mainJson);
                     if (mainJson.getBoolean("result")) {
                         String encodeDataString = mainJson.getString("data");
+                        //解密
                         String dataString = AESUtility.decode(encodeDataString, AESUtility.PKEY,
                                 AESUtility.PSECRETS.get(AESUtility.PKEY),
                                 AESUtility.IV.get(AESUtility.PKEY));
+
                         JSONObject data = new JSONObject(dataString);
+                        //解析
                         URL_SERVER = data.getString("master");
+                        Log.d("liwenpeng","URL_SERVER:"+URL_SERVER);
                         URL_SERVER_BAK = data.getString("slave1");
+                        Log.d("liwenpeng","URL_SERVER_BAK:"+URL_SERVER_BAK);
                         try {
                             JSONObject newsFlow = data.getJSONObject("newsflow");
+                            Log.d("liwenpeng","newsFlow:"+newsFlow);
                             JSONObject homePage = newsFlow.getJSONObject("homepage");
                             mHomePageIconUrl = homePage.getString("icon");
                             mHomePageUrl = homePage.getString("url");
@@ -181,6 +196,7 @@ public class Protocol {
                         }
                     }
                 } catch (Exception e) {
+                    Log.d("liwenpeng","e"+e.toString());
                     e.printStackTrace();
                 }            
             }

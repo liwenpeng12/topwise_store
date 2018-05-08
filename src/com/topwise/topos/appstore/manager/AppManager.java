@@ -18,6 +18,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.util.DisplayMetrics;
+import android.util.Log;
 
 import com.topwise.topos.appstore.AppStoreWrapper.AppUpgradeCountListener;
 import com.topwise.topos.appstore.AppStoreWrapperImpl;
@@ -124,6 +125,8 @@ public class AppManager extends BaseManager {
 
                     @Override
                     public void run() {
+                        //解析服务器返回的的数据
+                        Log.d("liwenpeng","服务器返回的数据t:"+t);
                         String res = Protocol.getInstance().parseRank(t, dataType);
                         if (callback == null) {
                             return;

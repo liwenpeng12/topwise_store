@@ -88,6 +88,7 @@ public class HttpManager {
         FileUtil.clearDir(Properties.CACHE_PATH);
     }
 
+    //FinalHttp
     private void initHttp() {
         mFinalHttp = FinalHttp.getInstance();
         mFinalHttp.addHeader("Accept-Charset", "UTF-8");// 配置http请求头

@@ -22,7 +22,13 @@ import android.util.Base64;
  * 参考《百度数据加密算法》
  * http://m.baidu.com/api?bdi_docs=1&action=intro&source=intro_extrainfo2
  * &cur=intro
- * 
+ *
+ *
+ 获取AES加密需要的key。将渠道号与密钥（API平台提供）拼接，然后获取拼接生成字符串的md5值并取后16位，最后将截取后的结果全部转为大写。
+ 处理AES加密需要的iv值。iv向API平台申请即可，如果申请到的iv值不足16位，需要用字符“0”补足。
+ 填充原文数据。具体算法见示例。
+ AES加密模式为CBC，实现算法为RIJNDAEL算法。具体初始化方式见示例。
+ 生成的密文需要进行base64编码处理，并进行urlencode。
  * @author yuanxingzhong
  * @since 2015年12月16日
  */

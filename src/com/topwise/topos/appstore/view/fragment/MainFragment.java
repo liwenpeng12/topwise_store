@@ -129,6 +129,7 @@ public class MainFragment extends BaseFragment  implements AppUpgradeCountListen
             }
         });
 
+        //下载按钮
         mDwldBtn = (PromptImageView) mRootView.findViewById(R.id.zkas_id_download_manage_btn);
         mDwldBtn.setOnClickListener(new View.OnClickListener() {
 
@@ -143,8 +144,7 @@ public class MainFragment extends BaseFragment  implements AppUpgradeCountListen
                 startActivity(intent);
             }
         });
-        //屏蔽下载按钮
-        mDwldBtn.setVisibility(View.GONE);
+
         mViewPager = (MyViewPager) mRootView.findViewById(R.id.zkas_id_main_viewpager);
         mViewPager.setOnPageChangeListener(mOnPageChangeListener);
         mViewPager.setOnTouchListener(new View.OnTouchListener() {

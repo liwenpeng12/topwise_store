@@ -19,6 +19,7 @@ import android.net.http.SslError;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.DownloadListener;
@@ -52,7 +53,7 @@ public class H5Activity extends Activity {
         mWebView.setDownloadListener(mDownloadListener);
         mWebView.loadUrl(mUrl);
         mWebView.showLoadingViewProgress("加载中……");
-
+        Log.d("liwenpeng","h5activity");
         mActionBar = (ActionBarView) findViewById(R.id.as_action_bar_layout);
         String title = getIntent().getStringExtra("title");
         if (title != null && title.length() > 0) {

@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.util.Log;
 
 import com.topwise.topos.appstore.AppStoreWrapperImpl;
 import com.topwise.topos.appstore.conn.http.AjaxCallBack;
@@ -38,7 +39,9 @@ public class SelfUpgradeCenter extends BaseManager {
 
     public void checkUpdate(final UpdateCallback callback) {
         mIsChecking = true;
+        Log.d("liwenpeng","upgradeurl："+Protocol.getInstance().getSelfUpgradeUrl());
         HttpManager.getInstance().post(Protocol.getInstance().getSelfUpgradeUrl(), new AjaxCallBack<String>() {
+
             @Override
             public void onSuccess(final String t) {
                 LogEx.d(t);

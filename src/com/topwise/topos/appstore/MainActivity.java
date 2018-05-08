@@ -196,7 +196,9 @@ public class MainActivity extends FragmentActivity{
         mWelcomeView = new WelcomeView(this, new WelcomeView.WelcomeGoneListener() {
             @Override
             public void onWelcomeGoneDelayed(long timeMills) {
+
                 mUIHandler.removeMessages(MSG_UI_DISMISS_WELCOME);
+                //
                 mUIHandler.sendEmptyMessageDelayed(MSG_UI_DISMISS_WELCOME, timeMills);
             }
         });

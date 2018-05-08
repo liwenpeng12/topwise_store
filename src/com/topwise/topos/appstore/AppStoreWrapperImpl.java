@@ -93,14 +93,15 @@ public class AppStoreWrapperImpl {
         new Thread("lazyInit") {
             @Override
             public void run() {
-                handler.postDelayed(new Runnable() {
+                //将runnable对象添加到消息队列，在指定延迟的时间后执行，runnable执行的线程取决于handler所在的线程
+                handler.postDelayed(new Runnable() {//此处的handler是在主线程创建的，所以这个Runnable对象也是在主线程中执行
 
                     @Override
                     public void run() {
                         lazyInit();
-                        HandlerThread ht = new HandlerThread("lazyInitAsync");
+                        HandlerThread ht = new HandlerThread("lazyInitAsync");//创建带looper的线程
                         ht.start();
-                        Handler handler = new Handler(ht.getLooper()) {
+                        Handler handler = new Handler(ht.getLooper()) {//绑定子线程lazyInitAsync
                             @Override
                             public void handleMessage(Message msg) {
                                 lazyInitAsync();
@@ -148,7 +149,7 @@ public class AppStoreWrapperImpl {
     }
 
     private void lazyInitAsync() {
-        // 获取host服务器
+        // 获取host服务器，得到一些数据
         Protocol.getInstance().getHostUrl();
 
         // 创建目录
@@ -244,7 +245,7 @@ public class AppStoreWrapperImpl {
         if (mChannel == null || mChannel.length() == 0) {
             try {
                 ApplicationInfo appInfo = mApplicationContext.getPackageManager().getApplicationInfo(mApplicationContext.getPackageName(),PackageManager.GET_META_DATA);
-                mChannel = appInfo.metaData.getString("IBIMUYUAPPSTORECHANNEL");
+                mChannel = appInfo.metaData.getString("IBIMUYUAPPSTORECHANNEL");//mChannel为dingzhi
             } catch (Exception e) {
             }
         }
